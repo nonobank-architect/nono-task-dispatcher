@@ -1,11 +1,10 @@
-package dispatcher.util;
+package com.nonobank.scheduler.util;
 
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 
-import dispatcher.service.TaskService;
 /**
  * 简单的properties文件解析
  * @author geyingchao
@@ -13,7 +12,7 @@ import dispatcher.service.TaskService;
  */
 public class ConfigUtil {
 
-	private static Logger logger = Logger.getLogger(ConfigUtil.class);
+	//private static Logger logger = Logger.getLogger(ConfigUtil.class);
 	/**
 	 * 解析String变量
 	 * @param key

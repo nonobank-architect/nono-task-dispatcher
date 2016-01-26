@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.nonobank.test</groupId>
-  <artifactId>test</artifactId>
+  <groupId>com.nonobank</groupId>
+  <artifactId>nono-task-scheduler</artifactId>
   <packaging>jar</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>test Maven Webapp</name>
+  <name>nono-task-scheduler Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -48,7 +48,7 @@
     
   </dependencies>
   <build>
-    <finalName>test</finalName>
+    <finalName>nono-task-scheduler</finalName>
      <plugins> 
      <plugin>  
         <groupId>org.apache.maven.plugins</groupId>  
@@ -64,7 +64,7 @@
     <configuration>
         <archive>
             <manifest>
-                <mainClass>dispatcher.scheduler.TaskScanner</mainClass>
+                <mainClass>com.nonobank.scheduler.scanner.TaskScanner</mainClass>
             </manifest>
         </archive>
     </configuration>

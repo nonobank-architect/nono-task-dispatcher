@@ -1,13 +1,16 @@
-package dispatcher.listener;
+package com.nonobank.scheduler.listener;
 
 
 import org.I0Itec.zkclient.IZkDataListener;
-import org.I0Itec.zkclient.ZkClient;
 import org.apache.log4j.Logger;
 
-import dispatcher.service.SchedulerService;
-import dispatcher.service.TaskService;
+import com.nonobank.scheduler.service.SchedulerService;
 
+/**
+ * task任务节点数据变化watch
+ * @author geyingchao
+ *
+ */
 public class DataListener  implements IZkDataListener{
 
 	private SchedulerService service;
@@ -18,8 +21,7 @@ public class DataListener  implements IZkDataListener{
 	}
 	@Override
 	public void handleDataChange(String dataPath, Object data) throws Exception {
-		ZkClient zkClient=service.zkClient;
-		service.getSchedulerTaskList(zkClient);
+		service.getSchedulerTaskList();
 		logger.error("data changed"+dataPath);
 	}
 

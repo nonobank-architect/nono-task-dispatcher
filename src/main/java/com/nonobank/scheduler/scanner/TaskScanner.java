@@ -1,23 +1,20 @@
-package dispatcher.scheduler;
+package com.nonobank.scheduler.scanner;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import org.I0Itec.zkclient.ZkClient;
 import org.apache.log4j.Logger;
-import org.apache.zookeeper.ZooKeeper.States;
 
-import com.alibaba.fastjson.JSON;
+import com.nonobank.scheduler.entity.SchedulerTask;
+import com.nonobank.scheduler.service.SchedulerService;
+import com.nonobank.scheduler.util.ConfigUtil;
+import com.nonobank.scheduler.util.CronParserUtil;
 
-import dispatcher.entity.SchedulerTask;
-import dispatcher.service.SchedulerService;
-import dispatcher.util.ConfigUtil;
-import dispatcher.util.CronParserUtil;
 
 public class TaskScanner implements Runnable {
 

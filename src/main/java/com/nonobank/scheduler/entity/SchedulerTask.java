@@ -1,4 +1,4 @@
-package dispatcher.entity;
+package com.nonobank.scheduler.entity;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -1,12 +1,12 @@
-package dispatcher.listener;
+package com.nonobank.scheduler.listener;
 
 import java.util.List;
 
 import org.I0Itec.zkclient.IZkChildListener;
-import org.I0Itec.zkclient.ZkClient;
 import org.apache.log4j.Logger;
 
-import dispatcher.service.SchedulerService;
+import com.nonobank.scheduler.service.SchedulerService;
+
 
 public class SchedulerListener implements IZkChildListener{
 
@@ -18,8 +18,7 @@ public class SchedulerListener implements IZkChildListener{
 	@Override
 	public void handleChildChange(String parentPath, List<String> currentChilds)
 			throws Exception {
-		ZkClient zkClient=service.zkClient;
-		service.getSchedulerTaskList(zkClient);
+		service.getSchedulerTaskList();
 		logger.error("scheduler changed");
 	}
 

@@ -1,10 +1,10 @@
-package dispatcher.util;
+package com.nonobank.scheduler.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 
 import com.cronutils.model.Cron;
@@ -13,12 +13,12 @@ import com.cronutils.model.definition.CronDefinition;
 import com.cronutils.model.definition.CronDefinitionBuilder;
 import com.cronutils.model.time.ExecutionTime;
 import com.cronutils.parser.CronParser;
+import com.nonobank.scheduler.entity.SchedulerTask;
 
-import dispatcher.entity.SchedulerTask;
 
 public class CronParserUtil {
 	
-	private static Logger logger = Logger.getLogger(CronParserUtil.class);
+	//private static Logger logger = Logger.getLogger(CronParserUtil.class);
 	/**
 	 * 判断任务是否可以被调度和是否需要调整
 	 * @param task
@@ -116,7 +116,7 @@ public class CronParserUtil {
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); //设置时间格式
 		String defaultStartDate = sdf.format(c.getTime()); 
 		Date now=c.getTime();
-		System.out.println(defaultStartDate);
+	//	System.out.println(defaultStartDate);
 		CronDefinition cronDefinition = CronDefinitionBuilder.instanceDefinitionFor(CronType.QUARTZ);
 	    CronParser parser = new CronParser(cronDefinition);
 		Cron quartzCron = parser.parse(cron);
@@ -125,7 +125,7 @@ public class CronParserUtil {
 		
 		for(int i=0;i<100;i++){
 			now = executionTime.nextExecution(new DateTime(now)).toDate();
-			System.out.println(sdf.format(now));
+		//	System.out.println(sdf.format(now));
 		}
 	}
 	
